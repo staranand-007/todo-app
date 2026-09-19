@@ -90,20 +90,22 @@ ul li::before {
     width: 28px;
     border-radius: 50%;
     background-image: url(images/unchecked.png);
-    background-size: cover;
+    background-size: 28px 28px;
+    background-repeat: no-repeat;
     background-position: center;
     top: 50%;
     left: 8px;
     transform: translateY(-50%);
 }
 
+ul li.checked::before {
+    background-image: url(images/checked.png);
+    background-size: 15px 15px;
+}
+
 ul li.checked {
     color: #555;
     text-decoration: line-through;
-}
-
-ul li.checked::before {
-    background-image: url(images/checked.png);
 }
 
 ul li span {
@@ -141,4 +143,60 @@ ul li span:hover {
 .footer span {
     color: red;
     font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+
+    .container {
+        padding: 10px;
+    }
+
+    .todo-app {
+        margin: 40px auto 20px;
+        padding: 30px 20px 65px;
+        border-radius: 10px;
+    }
+
+    .todo-app h2 {
+        font-size: 24px;
+        margin-bottom: 18px;
+    }
+
+    .row {
+        padding-left: 15px;
+    }
+
+    input {
+        min-width: 0;
+        font-size: 14px;
+    }
+
+    button {
+        padding: 14px 25px;
+        font-size: 15px;
+        flex-shrink: 0;
+    }
+
+    ul li {
+        font-size: 16px;
+        padding-left: 45px;
+        padding-right: 35px;
+    }
+
+    ul li::before {
+        left: 5px;
+    }
+
+    ul li span {
+        right: -2px;
+    }
+
+    #task-counter {
+        font-size: 12px;
+    }
+
+    .footer {
+        font-size: 13px;
+    }
 }
